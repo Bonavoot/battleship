@@ -1,6 +1,6 @@
 let ship = function (shipLength) {
   let shipArray = [];
-  for (let i = 0; i < shipLength - 1; i++) {
+  for (let i = 0; i < shipLength; i++) {
     shipArray.push("o");
   }
 

@@ -9,20 +9,18 @@ let gameBoard = function () {
   }
 
   function placeShip(coords, ship) {
-    gameBoardArray.splice(coords, ship.shipArray.length, "o");
+    gameBoardArray.splice(coords, ship.shipArray.length - 1, "o");
 
-    for (let i = 0; i < ship.shipArray.length; i++) {
+    for (let i = 0; i < ship.shipArray.length - 1; i++) {
       gameBoardArray.splice(coords, 0, ship.shipArray[i]);
       coords++;
     }
-    console.log(gameBoardArray);
   }
 
   function receiveAttack(coords) {
     if (gameBoardArray[coords] == "o") {
       gameBoardArray[coords] = "x";
       return "hit";
-      console.log(gameBoardArray);
     } else if (
       gameBoardArray[coords] == "x" ||
       gameBoardArray[coords] == "miss"
@@ -32,13 +30,21 @@ let gameBoard = function () {
       gameBoardArray[coords] = "miss";
       return "miss";
     }
-    console.log(gameBoardArray);
+  }
+
+  function allShipsSunk() {
+    if (!gameBoardArray.includes("o")) {
+      return "Game Over";
+    } else {
+      return "Ships remain";
+    }
   }
 
   return {
     gameBoardArray,
     placeShip,
     receiveAttack,
+    allShipsSunk,
   };
 };
 
