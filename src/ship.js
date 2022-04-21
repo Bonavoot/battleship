@@ -22,6 +22,6 @@ let ship = function (shipLength) {
   };
 };
 
-module.exports = ship;
+export default ship;
 
-// splice(coord, ship.length, replaceWithShipArray)
+//module.exports = ship;

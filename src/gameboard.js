@@ -40,4 +40,6 @@ let gameBoard = function () {
   };
 };
 
-module.exports = gameBoard;
+export default gameBoard;
+
+// module.exports = gameBoard;

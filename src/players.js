@@ -13,4 +13,5 @@ let players = function () {
   };
 };
 
-module.exports = players;
+export default players;
+//module.exports = players;
