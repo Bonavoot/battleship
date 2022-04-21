@@ -1,5 +1,6 @@
 const gameBoard = require("../src/gameboard");
 const ship = require("../src/ship");
+const player = require("../src/players");
 
 test("#placeShip", () => {
   let ship1 = ship(4);
@@ -24,4 +25,16 @@ test("#allShipsSunk", () => {
   newGameboard.receiveAttack(0);
   newGameboard.receiveAttack(1);
   expect(newGameboard.allShipsSunk()).toBe("Game Over");
+});
+
+// players test
+
+test("#randomMove", () => {
+  let computer = player();
+  let newGameboard = gameBoard();
+  let move = computer.randomMove(newGameboard.gameBoardArray);
+
+  newGameboard.receiveAttack(move);
+
+  expect(newGameboard.gameBoardArray[move]).toBe("miss");
 });
