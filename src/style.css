@@ -1,3 +1,11 @@
-div {
-  font-size: 100px;
+.container {
+  display: grid;
+  grid-template-rows: repeat(10, max-content);
+  grid-template-columns: repeat(10, max-content);
+}
+
+.container > div {
+  border: 1px black solid;
+  height: 50px;
+  width: 50px;
 }
