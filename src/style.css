@@ -1,11 +1,47 @@
-.container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(201, 201, 201);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 25px;
+  font-size: 4em;
+  color: rgb(0, 0, 0);
+}
+
+.player-one-board,
+.player-two-board {
   display: grid;
   grid-template-rows: repeat(10, max-content);
   grid-template-columns: repeat(10, max-content);
 }
 
-.container > div {
+.player-one-board > div,
+.player-two-board > div {
   border: 1px black solid;
   height: 50px;
   width: 50px;
+
+  background-color: rgb(47, 58, 121);
+}
+
+.player-one-board > div:hover,
+.player-two-board > div:hover {
+  background-color: rgb(2, 196, 18);
+}
+
+#o {
+  background-color: rgb(78, 78, 78);
 }

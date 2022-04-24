@@ -1,4 +1,7 @@
+import ship from "./ship";
+
 let players = function () {
+  const battleships = [ship(5), ship(4), ship(3), ship(3), ship(2)];
   function randomMove(arr) {
     let move;
     do {
@@ -10,6 +13,7 @@ let players = function () {
 
   return {
     randomMove,
+    battleships,
   };
 };
 

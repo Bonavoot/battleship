@@ -4,6 +4,20 @@ import ship from "./ship";
 import gameBoard from "./gameboard";
 import renderBoard from "./renderBoard";
 
-let newGameBoard = gameBoard();
+// Selectors
+const humanBoard = document.getElementsByClassName("player-one-board");
+const computerBoard = document.getElementsByClassName("player-two-board");
+const playerOneCells = document.querySelectorAll(".player-one-cell");
+const computerCells = document.querySelectorAll(".computer-cell");
 
-renderBoard(newGameBoard.gameBoardArray);
+// Game loop
+const playGame = (() => {
+  let newGameBoard = gameBoard();
+  renderBoard(newGameBoard.gameBoardArray);
+})();
+
+const newGameBoard = gameBoard();
+const computer = players();
+
+newGameBoard.randomlyPlaceShips(computer, newGameBoard);
+console.log(newGameBoard.gameBoardArray);
