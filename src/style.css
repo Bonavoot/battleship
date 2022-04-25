@@ -23,6 +23,7 @@ body {
 
 .player-one-board,
 .player-two-board {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(10, max-content);
   grid-template-columns: repeat(10, max-content);
@@ -44,4 +45,21 @@ body {
 
 #o {
   background-color: rgb(78, 78, 78);
+}
+
+.coord-letter,
+.coord-letter-cpu {
+  position: absolute;
+  top: -30px;
+  margin-left: 20px;
+  font-size: 20px;
+  background: none;
+}
+
+.coord-num,
+.coord-num-cpu {
+  position: absolute;
+  left: -30px;
+  margin-top: 20px;
+  font-size: 20px;
 }
