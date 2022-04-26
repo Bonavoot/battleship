@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(201, 201, 201);
 }
 
 body {
+  background-color: rgb(201, 201, 201);
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -27,6 +27,7 @@ body {
   display: grid;
   grid-template-rows: repeat(10, max-content);
   grid-template-columns: repeat(10, max-content);
+  margin: 175px;
 }
 
 .player-one-board > div,
@@ -62,4 +63,34 @@ body {
   left: -30px;
   margin-top: 20px;
   font-size: 20px;
+}
+
+.ship-container {
+  position: absolute;
+  display: grid;
+  grid-template-areas:
+    "cell"
+    "cell"
+    "cell"
+    "cell"
+    "cell";
+  gap: 10px;
+  background: none;
+}
+
+.drag-ship {
+  display: flex;
+  background: none;
+}
+
+.drag-ship-cell {
+  grid-area: cell;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(78, 78, 78);
+  border: black solid 1px;
+}
+
+.drag-ship .dragging {
+  opacity: 1;
 }
